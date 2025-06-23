@@ -109,7 +109,8 @@ class RewardModelTrainer:
             logging_steps=10,
             eval_strategy="steps",
             eval_steps=20,
-            save_strategy="epoch",
+            save_strategy="steps",  # Changed to match eval_strategy
+            save_steps=20,          # Added save_steps to match eval_steps
             load_best_model_at_end=True,
             metric_for_best_model="eval_loss",
             greater_is_better=False,
